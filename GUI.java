@@ -24,6 +24,7 @@ public GUI(){
     drawDisplay();
     drawBag();
     drawCanvas();
+    drawButtons();
     END();
 }
 
@@ -44,10 +45,11 @@ public GUI(){
         display.setBorder(BorderFactory.createMatteBorder(2, 2, 4, 4, Color.CYAN));
         display.setFont(new Font("Italic", Font.ITALIC, 12));
         display.setPreferredSize(new DimensionUIResource(400, 75));
-        display.setText("0");
+        situation.setDisplay("10");
         display.setHorizontalAlignment(SwingConstants.RIGHT);
         //canvas.add(display);
     }
+    
     
 
     // GridBag
@@ -75,6 +77,14 @@ public GUI(){
         canvas.add(this.keypad, keybag);
     }
     
+    Situation situation = new Situation(display);
+
+    private void drawButtons(){
+        keypad.add(new BinOpButton("/", situation, (a,b) -> (a/b)));
+        keypad.add(new BinOpButton("*", situation, (a,b) -> (a*b)));
+        keypad.add(new BinOpButton("+", situation, (a,b) -> (a+b)));
+        keypad.add(new BinOpButton("-", situation, (a,b) -> (a-b)));
+    }
     
     
     // ending commands

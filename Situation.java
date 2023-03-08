@@ -9,4 +9,13 @@ public class Situation{
     Situation(JLabel display){
         this.display = display;
     }
+
+    public void setDisplay(String värde){
+        display.setText(värde);
+    }
+
+    public int valueDisplay(){
+        leftOperand = Integer.parseInt(display.getText());
+        return leftOperand;
+    }
 }

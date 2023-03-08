@@ -1,3 +1,3 @@
-public class EqualsButton {
+public class EqualsButton extends CalculatorButton{
     
 }
