@@ -7,28 +7,31 @@ import javax.swing.Action;
 import javax.swing.JButton;
 import javax.swing.plaf.DimensionUIResource;
 
-public abstract class CalculatorButton extends JButton{
+public abstract class CalculatorButton extends JButton implements ActionListener{
 
     //måste skapa för toString ska fungera
-    String enStr = new String();
+    String enStr;
     Situation situation;
 
     public CalculatorButton(String enStr, Situation situation){
         super(enStr);
         this.situation = situation;
+        this.enStr = enStr;
 
         //knapparnas storlek, färg, font
-        this.setPreferredSize(new DimensionUIResource(100, 100));
+        //this.setPreferredSize(new DimensionUIResource(300, 300));
         this.setBackground(Color.GRAY);
-        this.setFont(new Font("Italic", Font.ITALIC, 12));
+        this.setFont(new Font("Italic", Font.ITALIC, 24));
         
-        //lägger keylistner på knapparna
-        this.addActionListener(actionListener);
+        //lägger Actionlistner på knapparna
+        addActionListener(this);
     }
 
     //kallar på transition vid knapptryck
     public void actionPerformed(ActionEvent e){
         transition();
+        System.out.println(situation.getState());
+        System.out.println(situation.valueDisplay());
     }
 
     public abstract void transition();

@@ -15,7 +15,12 @@ public class Situation{
     }
 
     public int valueDisplay(){
-        leftOperand = Integer.parseInt(display.getText());
-        return leftOperand;
+        return Integer.parseInt(display.getText());
+    }
+    public State getState(){
+        return state;
+    }
+    public void setLeftOperator(){
+        leftOperand = valueDisplay();
     }
 }
