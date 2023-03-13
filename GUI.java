@@ -2,10 +2,8 @@ import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.plaf.DimensionUIResource;
-import javax.swing.plaf.InsetsUIResource;
 
 import java.awt.GridBagLayout;
 import java.awt.Color;

@@ -18,19 +18,18 @@ public class CancelButton extends CalculatorButton{
                 this.situation.setDisplay("0");
                 this.situation.leftOperand = 0;
                 this.situation.state = State.Input1;
-                this.setBGColor(Color.GRAY);
                 break;
             case Input2:
-                this.situation.setDisplay("0");
-                this.situation.leftOperand = 0;
                 this.situation.state = State.Input1;
-                this.setBGColor(Color.GRAY);
+                this.situation.setDisplay("0");
+                this.situation.binaryOperator.setBGColor(Color.GRAY);
+                this.situation.leftOperand = 0;
                 break;
             case OpReady:
-                this.situation.setDisplay("0");
-                this.situation.leftOperand = 0;
                 this.situation.state = State.Input1;
-                this.setBGColor(Color.GRAY);
+                this.situation.setDisplay("0");
+                this.situation.binaryOperator.setBGColor(Color.GRAY);
+                this.situation.leftOperand = 0;
                 break;
         }
     }

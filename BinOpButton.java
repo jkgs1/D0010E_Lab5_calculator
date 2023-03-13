@@ -9,6 +9,10 @@ public class BinOpButton extends CalculatorButton {
         this.teckenOperation = teckenOperator;
     }
 
+    public int resultat(int a, int b){
+        return this.teckenOperation.applyAsInt(a, b);
+    }
+
     @Override
     public void transition() {
         switch(this.situation.state){
@@ -18,12 +22,15 @@ public class BinOpButton extends CalculatorButton {
                 this.situation.binaryOperator=this;
                 break;
             case HasResult:
+                //sparar resultatet som leftOperand och ändrar state
                 this.situation.state = State.OpReady;
+                this.situation.leftOperand = this.situation.valueDisplay();
+                this.situation.binaryOperator=this;
+                this.setBGColor(Color.RED);
                 break;
             case Input2:
             case OpReady:
-                this.situation.valueDisplay();
-                this.setBGColor(Color.GRAY);
+                this.situation.binaryOperator.setBGColor(Color.GRAY);
                 this.situation.binaryOperator = this;
                 this.setBGColor(Color.RED);
                 break;

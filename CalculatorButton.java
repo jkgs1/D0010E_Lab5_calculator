@@ -3,13 +3,10 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.Action;
 import javax.swing.JButton;
-import javax.swing.plaf.DimensionUIResource;
 
 public abstract class CalculatorButton extends JButton implements ActionListener{
 
-    //måste skapa för toString ska fungera
     String enStr;
     Situation situation;
 
@@ -30,8 +27,8 @@ public abstract class CalculatorButton extends JButton implements ActionListener
     //kallar på transition vid knapptryck
     public void actionPerformed(ActionEvent e){
         transition();
+        System.out.println("leftoperand=" + situation.leftOperand);
         System.out.println(situation.getState());
-        System.out.println(situation.valueDisplay());
     }
 
     public abstract void transition();
