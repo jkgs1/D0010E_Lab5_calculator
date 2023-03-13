@@ -1,3 +1,5 @@
+//John Kågström 
+//Oscar Westerlund Bucht
 import java.awt.Color;
 import java.util.function.IntBinaryOperator;
 

@@ -1,3 +1,5 @@
+//John Kågström 
+//Oscar Westerlund Bucht
 import java.awt.Color;
 
 public class EqualsButton extends CalculatorButton {

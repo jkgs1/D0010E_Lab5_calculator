@@ -1,3 +1,5 @@
+//John Kågström 
+//Oscar Westerlund Bucht
 import javax.swing.JLabel;
 
 public class Situation{
